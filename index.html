@@ -151,14 +151,21 @@
                     <i class="fas fa-database text-blue-500 text-3xl mb-4"></i>
                     <h3 class="font-bold mb-2 uppercase text-xs tracking-widest">Dataset / Input</h3>
                     <p class="text-sm text-slate-500 mb-4">This project uses publicly available datasets from Kaggle:</p>
-                    <ul class="space-y-2 mb-6">
-                        <li class="text-slate-400 text-sm flex items-center">
-                            <i class="fas fa-circle text-blue-500 text-xs mr-3"></i>
-                            Kaggle Ovarian Cancer Biomarker Dataset (238 patients, 48 biomarkers)
+                    <ul class="space-y-2 mb-6 text-left">
+                        <li class="text-slate-400 text-sm flex items-start">
+                            <i class="fas fa-circle text-blue-500 text-[8px] mt-1.5 mr-3"></i>
+                            <div>
+                                <strong class="text-slate-300">Biomarker Dataset:</strong> 
+                                Kaggle Ovarian Cancer Dataset (238 patients, 48 clinical features)
+                            </div>
                         </li>
-                        <li class="text-slate-400 text-sm flex items-center">
-                            <i class="fas fa-circle text-blue-500 text-xs mr-3"></i>
-                            TCGA Ovarian Histological Images (33,110 images: 19,747 Tumor, 13,363 Non-Tumor)
+                        <li class="text-slate-400 text-sm flex items-start">
+                            <i class="fas fa-circle text-purple-500 text-[8px] mt-1.5 mr-3"></i>
+                            <div>
+                                <strong class="text-slate-300">Imaging Dataset:</strong> 
+                                The Cancer Genome Atlas (TCGA) Ovarian Histological Images
+                                <div class="text-[11px] text-slate-500 mt-0.5">Total: 33,110 images (19,747 Tumor, 13,363 Non-Tumor)</div>
+                            </div>
                         </li>
                     </ul>
                     <p class="text-sm text-slate-500 mb-3 font-semibold">Data Files Used:</p>
@@ -170,7 +177,7 @@
                             <span class="text-blue-300 font-semibold text-xs">Train-Test Split:</span> <span class="text-slate-400 text-sm">70% training (160 patients), 30% testing (71 patients)</span>
                         </div>
                         <div class="glass p-3 rounded-lg border border-blue-500/10 hover:border-blue-400/30 transition-colors">
-                            <span class="text-blue-300 font-semibold text-xs">Image Distribution:</span> <span class="text-slate-400 text-sm">4,000 training + 1,000 validation images (balanced classes)</span>
+                            <span class="text-blue-300 font-semibold text-xs">Image Distribution:</span> <span class="text-slate-400 text-sm">5,000 image subset (4,000 training, 1,000 validation)</span>
                         </div>
                         <div class="glass p-3 rounded-lg border border-blue-500/10 hover:border-blue-400/30 transition-colors">
                             <span class="text-blue-300 font-semibold text-xs">Image Preprocessing:</span> <span class="text-slate-400 text-sm">224×224 resize, pixel normalization [0,1], augmentation applied</span>
@@ -224,9 +231,37 @@
                         <span class="text-slate-400 font-bold uppercase text-xs tracking-widest">Random Forest Accuracy</span>
                         <span class="text-blue-400 font-mono font-black text-3xl">83.09%</span>
                     </div>
-                    <div class="p-6 rounded-2xl bg-white/5 flex justify-between items-center border border-white/10 shadow-inner hover:border-purple-500/50 transition">
-                        <span class="text-slate-400 font-bold uppercase text-xs tracking-widest">DenseNet121 Accuracy</span>
-                        <span class="text-purple-400 font-mono font-black text-3xl">95.40%</span>
+                    <div class="p-6 rounded-2xl bg-white/5 flex flex-col border border-white/10 shadow-inner hover:border-purple-500/50 transition">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-slate-400 font-bold uppercase text-xs tracking-widest">DenseNet121 Accuracy</span>
+                            <span class="text-purple-400 font-mono font-black text-3xl">95.40%</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-6 border-t border-white/10 pt-4">
+                            <div>
+                                <div class="text-[10px] text-slate-500 uppercase tracking-widest mb-2 font-bold">Tumor Metrics</div>
+                                <div class="flex justify-between text-xs text-slate-400 mb-1">
+                                    <span>Sensitivity/Recall:</span> <span class="text-purple-300 font-mono font-bold">1.00</span>
+                                </div>
+                                <div class="flex justify-between text-xs text-slate-400 mb-1">
+                                    <span>Precision:</span> <span class="text-white font-mono">0.93</span>
+                                </div>
+                                <div class="flex justify-between text-xs text-slate-400">
+                                    <span>F1-Score:</span> <span class="text-white font-mono">0.96</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-[10px] text-slate-500 uppercase tracking-widest mb-2 font-bold">Non-Tumor Metrics</div>
+                                <div class="flex justify-between text-xs text-slate-400 mb-1">
+                                    <span>Specificity/Recall:</span> <span class="text-purple-300 font-mono font-bold">0.88</span>
+                                </div>
+                                <div class="flex justify-between text-xs text-slate-400 mb-1">
+                                    <span>Precision:</span> <span class="text-white font-mono">0.99</span>
+                                </div>
+                                <div class="flex justify-between text-xs text-slate-400">
+                                    <span>F1-Score:</span> <span class="text-white font-mono">0.93</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
     
                 </div>
